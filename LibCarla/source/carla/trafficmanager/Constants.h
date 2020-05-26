@@ -107,6 +107,7 @@ static const float FOLLOW_DISTANCE_RATE = RATE(MAX_FOLLOW_LEAD_DISTANCE,
 static const float CRITICAL_BRAKING_MARGIN = 0.25f;
 static const float EPSILON_RELATIVE_SPEED = 0.001f;
 static const float MAX_JUNCTION_BLOCK_DISTANCE = 0.5f * WaypointSelection::SAFE_DISTANCE_AFTER_JUNCTION;
+static const float MIN_DIST_TO_JUNCTION_FOR_SAFE_SPACE= 4.0f;
 } // namespace MotionPlan
 
 namespace PID {

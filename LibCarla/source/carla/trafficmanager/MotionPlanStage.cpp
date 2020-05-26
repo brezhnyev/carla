@@ -127,8 +127,10 @@ void MotionPlanStage::Update(const unsigned long index) {
   bool safe_after_junction = true;
   SimpleWaypointPtr junction_end_point = localization.junction_end_point;
   SimpleWaypointPtr safe_point = localization.safe_point;
+  SimpleWaypointPtr pre_junc = GetTargetWaypoint(waypoint_buffer, MIN_DIST_TO_JUNCTION_FOR_SAFE_SPACE).first;
   if (!tl_hazard && localization.is_at_junction_entrance
       && junction_end_point != nullptr && safe_point != nullptr
+      && pre_junc != nullptr && !pre_junc->CheckJunction()
       && junction_end_point->DistanceSquared(safe_point) > SQUARE(MIN_SAFE_INTERVAL_LENGTH)) {
     ActorIdSet initial_set = track_traffic.GetPassingVehicles(junction_end_point->GetId());
     float safe_interval_length_squared = junction_end_point->DistanceSquared(safe_point);
