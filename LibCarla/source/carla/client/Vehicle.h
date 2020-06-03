@@ -11,9 +11,8 @@
 #include "carla/rpc/VehicleLightState.h"
 #include "carla/rpc/VehicleControl.h"
 #include "carla/rpc/VehiclePhysicsControl.h"
-#include "carla/trafficmanager/TrafficManager.h"
+#include "carla/trafficmanager/Constants.h"
 
-using carla::traffic_manager::constants::Networking::TM_DEFAULT_PORT;
 
 namespace carla {
 
@@ -38,7 +37,7 @@ namespace client {
     using ActorState::GetBoundingBox;
 
     /// Switch on/off this vehicle's autopilot.
-    void SetAutopilot(bool enabled = true, uint16_t tm_port = TM_DEFAULT_PORT);
+    void SetAutopilot(bool enabled = true, uint16_t tm_port = traffic_manager::constants::Networking::TM_DEFAULT_PORT);
 
     /// Apply @a control to this vehicle.
     void ApplyControl(const Control &control);

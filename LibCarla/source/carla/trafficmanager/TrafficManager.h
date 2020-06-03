@@ -11,8 +11,8 @@
 #include <vector>
 
 #include "carla/client/Actor.h"
-#include "carla/trafficmanager/Constants.h"
 #include "carla/trafficmanager/TrafficManagerBase.h"
+#include "carla/trafficmanager/Constants.h"
 
 namespace carla {
 namespace traffic_manager {
